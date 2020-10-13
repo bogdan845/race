@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearly tetris race</title>
+    <link rel="icon" href="./assets/images/favicon/favicon.ico" type="image/icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="race not-active" id="raceWrap">
+        <div class="start-display">Movements: A / D (PC) or tap left / right side of the screen (Mobile)</div>
+        <div id="leftMove" class="move-left"></div>
+        <div id="rightMove" class="move-right"></div>
+
+        <canvas id="race" width="200px" height="400px"></canvas>
+        <button class="play-btn" id="startGame">play</button>
+        <button class="restart-btn" id="restartRace">restart</button>
+    </div>
+
+    <script src="assets/js/race.js"></script>
+
+</body>
+
+</html>
