@@ -315,7 +315,10 @@ function Bots(x, y) {
             // setting y coords
             this.y = block * 2;
 
-            /* setting x coords. Generating random number between 1 and 16 and multiply it  on 10. because canvas width is 200 - 20 (borders from each side) available canvas width is 180. So 160(max random number) + 20(bot width) = 180. So now we sure that bot position will be correct  (from 10 to 160)  */
+            /* setting x coords. Generating random number between 1 and 16 and multiply it  on 10.
+             because canvas width is 200 - 20 (borders from each side) available canvas width is 180. 
+             So 160(max random number) + 20(bot width) = 180. 
+             So now we sure that bot position will be correct  (from 10 to 160)  */
             var setCoordX = Math.floor(Math.random() * (getColumns - 4)) + 1;
             this.x = setCoordX * block;
         }
