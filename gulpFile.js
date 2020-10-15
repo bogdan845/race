@@ -25,16 +25,34 @@ gulp.task("test", function (done) {
 // sass
 // ! exclude files that are not needed
 var scss_path = "./src/assets/scss/**/*.scss";
-
 function styles() {
     return gulp.src(scss_path)
-        .pipe(gulpSourcemaps.init({loadMaps: true}))
         .pipe(sass())
-        .pipe(gulpCleanCss({compatibilty: "ie9"}))
-        .pipe(gulpSourcemaps.write("./"))
         .pipe(gulp.dest("./src/assets/css"))
-        .pipe(gulp.dest("./dist/assets/css"))
         .pipe(browserSync.reload({stream: true}));
+}
+
+// minify styles
+var css_path = "./src/assets/css/**/*.css"
+function stylesMinify() {
+    return gulp.src(css_path)
+        .pipe(gulpSourcemaps.init({loadMaps: true}))
+        .pipe(gulpCleanCss({compatibility: "ie9"}))
+        .pipe(gulpSourcemaps.write("./"))
+        .pipe(gulp.dest("./dist/assets/css"))
+}
+
+
+// images
+var images_path = "./src/assets/images/**/*";
+function images() {
+    return (gulp.src(images_path))
+        .pipe(gulpImagemin({
+            interlaced: true,
+            progressive: true,
+            optimizationLevel: 5,
+        }))
+        .pipe(gulp.dest("./dist/assets/images"))
 }
 
 
